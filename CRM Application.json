@@ -1,0 +1,1314 @@
+{
+	"info": {
+		"_postman_id": "1a854178-0409-4f1c-aa2d-ac310a27cc31",
+		"name": "CRM Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29468164"
+	},
+	"item": [
+		{
+			"name": "User - SUPER_ADMIN, FRANCHISOR, COMPANY",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"username\":\"superadmin@gmail.com\",\r\n    \"password\":\"1234\"\r\n}\r\n\r\n// {\r\n//     \"username\":\"company@gmail.com\",\r\n//     \"password\":\"swapnil\"\r\n// }\r\n\r\n// {\r\n//     \"username\":\"swapnil@gmail.com\",\r\n//     \"password\":\"swapnil\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user by super admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTczOTA4NTU1OX0.A8J_9gnSWXiRGMt4oslzEwCJIkJYu4PU8WbsROIVZ44",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"name\":\"swapnil\",\r\n//     \"username\":\"company@gmail.com\",\r\n//     \"password\":\"1234\",\r\n//     \"companyName\":\"CRM\",\r\n//     \"location\":\"pune\",\r\n//     \"type\":\"COMPANY\"\r\n// }\r\n\r\n{\r\n    \"name\":\"swapnil\",\r\n    \"username\":\"franchisor3@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"companyName\":\"CRM\",\r\n    \"location\":\"p\",\r\n    \"type\":\"FRANCHISOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users - super admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzd2Fwbmlsc3VkcmlrLnNAZ21haWwuY29tIiwiaWF0IjoxNzM4MjU5OTc5LCJleHAiOjE3MzgyNjE3Nzl9.uh2dz4T-0wWMGjq5sMRTtEkkWTjfpAKurVGkRAx_FeE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id - super admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzd2Fwbmlsc3VkcmlrLnNAZ21haWwuY29tIiwiaWF0IjoxNzM4Mjk2NzUxLCJleHAiOjE3MzgyOTg1NTF9.IElKrvSPHcJR1CGW4JQSmEiDeOEZ-AFWBkZQ-heZMx4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/get/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update - super-admin, FRANCHISOR, COMPANY",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzd2FwbmlsQGdtYWlsLmNvbSIsImlhdCI6MTczODI1NjgyOCwiZXhwIjoxNzM4MjU4NjI4fQ.4BBDO38dvlZ8gyYf97xuyW1xD6ZSEOz5P0W2OV5dRHU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"swapnil sudrik\",\r\n    \"username\": \"swapnil@gmail.com\",\r\n    \"password\": \"swapnil\",\r\n    \"companyName\": \"CRM\",\r\n    \"type\": \"FRANCHISOR\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTczODkwMzQ3M30.cYrzVe6edpkfy-ob1pIBwFbEgX4-8eXRlvYwTFzK__A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Posting - COMPANY",
+			"item": [
+				{
+					"name": "login - company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"company@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create job posting - company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczOTA4NTYzMn0.lCSdlOKoLl3RbUdwK1BRBDXhcRp0ueVTSUNaI3ZO0l8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "companyName",
+									"value": "ABC Tech",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "abc@tech.com",
+									"type": "text"
+								},
+								{
+									"key": "jobTitle",
+									"value": "java developer",
+									"type": "text"
+								},
+								{
+									"key": "noOfPosition",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "positionPerDepartment",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "contactDetails",
+									"value": "7057546782",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "1 year",
+									"type": "text"
+								},
+								{
+									"key": "hours",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "shift",
+									"value": "10 to 7",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "p",
+									"type": "text"
+								},
+								{
+									"key": "minSalary",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "maxSalary",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "deadline",
+									"value": "2025-02-20",
+									"type": "text"
+								},
+								{
+									"key": "jobType",
+									"value": "full time",
+									"type": "text"
+								},
+								{
+									"key": "docc",
+									"type": "file",
+									"src": "/C:/Users/swapn/Desktop/CamScanner 07-17-2023 15.16.51.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job posting - company Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczODMwMDIyMSwiZXhwIjoxNzM4MzAyMDIxfQ.8LAf-WM1-RqYeObUlKwPSs_XbPCl0ijr5qNoNaFwkRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "companyName",
+									"value": "ABC Technology",
+									"type": "text"
+								},
+								{
+									"key": "jobTitle",
+									"value": "javaDevelopers",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "abc@tech.com",
+									"type": "text"
+								},
+								{
+									"key": "noOfPosition",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "positionPerDepartment",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "contactDetails",
+									"value": "7057546782",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "1 year",
+									"type": "text"
+								},
+								{
+									"key": "hours",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "shift",
+									"value": "10 to 7",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "pune",
+									"type": "text"
+								},
+								{
+									"key": "minSalary",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "maxSalary",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "deadline",
+									"value": "today",
+									"type": "text"
+								},
+								{
+									"key": "jobType",
+									"value": "full time",
+									"type": "text"
+								},
+								{
+									"key": "docc",
+									"type": "file",
+									"src": "postman-cloud:///1efe2f0c-077c-4d80-92ee-b5068196c214"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/update/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"update",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all job posting - company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczODMwMDIyMSwiZXhwIjoxNzM4MzAyMDIxfQ.8LAf-WM1-RqYeObUlKwPSs_XbPCl0ijr5qNoNaFwkRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/getAllJobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"getAllJobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get job posting by id - company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzd2FwbmlsQGdtYWlsLmNvbSIsImlhdCI6MTczODI2MDYxOCwiZXhwIjoxNzM4MjYyNDE4fQ.ayiIsEAlkJbYyIqk2gNGXUOREEld1jKXljF99rR4jCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/getJobById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"getJobById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete job posting - company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzd2FwbmlsQGdtYWlsLmNvbSIsImlhdCI6MTczODI2MDYxOCwiZXhwIjoxNzM4MjYyNDE4fQ.ayiIsEAlkJbYyIqk2gNGXUOREEld1jKXljF99rR4jCY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get jobs by location - company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczODczNTgyMywiZXhwIjoxNzM4NzM3NjIzfQ.h4LvJ7KAkwdQgVB2wayNz72Jp_tqoDMPlSVZXsWzXCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/getByLocation/JALgaonn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"getByLocation",
+								"JALgaonn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download job document by id - company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczODczNjg5NywiZXhwIjoxNzM4NzM4Njk3fQ.LsmKD7LGCJ8Y8F-imk5aGoxj2cR-f8U1c4cZWjZMPxI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/1/downloadJobDocument",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"1",
+								"downloadJobDocument"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get active jobs only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczOTA4MzM4NH0.iDUPVhVLMqOyP4HG8iiJT1npWZGR1_uQR4xXR_SgnTE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/activeJobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"activeJobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get expired jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb21wYW55QGdtYWlsLmNvbSIsImlhdCI6MTczOTA4MzM4NH0.iDUPVhVLMqOyP4HG8iiJT1npWZGR1_uQR4xXR_SgnTE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jobPosting/expiredJobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jobPosting",
+								"expiredJobs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidate - FRANCHISOR",
+			"item": [
+				{
+					"name": "login - franchisor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"franchisor3@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create candidate - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yM0BnbWFpbC5jb20iLCJpYXQiOjE3MzkwOTM4Nzh9.pvfHO7XLxoI6bxYwIo_T9PorUFew7fG_VfBL_5CnIRk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "swapnil",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fg@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "qualification",
+									"value": "Msc",
+									"type": "text"
+								},
+								{
+									"key": "jobPost",
+									"value": "java developer",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "pune",
+									"type": "text"
+								},
+								{
+									"key": "phoneNo",
+									"value": "7057845785",
+									"type": "text"
+								},
+								{
+									"key": "resumeFile",
+									"type": "file",
+									"src": "/C:/Users/swapn/Desktop/CRM_Application_Flow.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/candidate/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update candidate - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yMUBnbWFpbC5jb20iLCJpYXQiOjE3MzkwODU1OTB9.zOcfG71jpwg-JKgf5FXT3VmtsqCU5Yux0fuONfDi1BE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "swapnil sudrik",
+									"type": "text"
+								},
+								{
+									"key": "qualification",
+									"value": "Msc",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ss@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "jobPost",
+									"value": "Java Full Stack Developer",
+									"type": "text"
+								},
+								{
+									"key": "placementStatus",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "pune",
+									"type": "text"
+								},
+								{
+									"key": "phoneNo",
+									"value": "7057545783",
+									"type": "text"
+								},
+								{
+									"key": "resumeFile",
+									"type": "file",
+									"src": "/C:/Users/swapn/Desktop/CamScanner 07-17-2023 15.16.51.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/candidate/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all candidate - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yQGdtYWlsLmNvbSIsImlhdCI6MTczODY0ODczNiwiZXhwIjoxNzM4NjUwNTM2fQ.0Bdw2QA45KOhw0reqlchMz61uXNBoJ_pPgh7YM4WBNM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get candidate by id - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzd2FwbmlsQGdtYWlsLmNvbSIsImlhdCI6MTczODI5NjE0NiwiZXhwIjoxNzM4Mjk3OTQ2fQ.SwUp1MIiffpySz2D2AKIl6hrbAgonflbHw_SzLL8Wkc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/getById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"getById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete candidate - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yQGdtYWlsLmNvbSIsImlhdCI6MTczODI5NzI3NiwiZXhwIjoxNzM4Mjk5MDc2fQ.BpufL4rSJD8F4z8ICZQTLVM4qt6eU2U-dby1HpJWHvo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add candidate by excel - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yQGdtYWlsLmNvbSIsImlhdCI6MTczODQyMzcyNiwiZXhwIjoxNzM4NDI1NTI2fQ.re1iNtJf9qFSMTj7nJD6VJRGTQ6EG3TlLAsGdt_fzOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/Downloads/Candidate_Details_With_Resumes.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/candidate/viaExcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"viaExcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download resume in application/octet-stream by id - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yQGdtYWlsLmNvbSIsImlhdCI6MTczODY0ODUxNiwiZXhwIjoxNzM4NjUwMzE2fQ.4GnHYFjXQNJFv_7JVMOx5UUiCEDlFScaacEDYcdwxPs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/downloadResume/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"downloadResume",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download resume in original form by id - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yQGdtYWlsLmNvbSIsImlhdCI6MTczODczODIxNywiZXhwIjoxNzM4NzQwMDE3fQ.IXj0wHQzVqSAwNCYWJn7CVeTAcnHIBkgpfJWQA3RypM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/1/downloadResume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"1",
+								"downloadResume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save resume to system - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yQGdtYWlsLmNvbSIsImlhdCI6MTczODY1MDQ4MSwiZXhwIjoxNzM4NjUyMjgxfQ.xqdVxCk1p1nQSnAyiXtw6bYvAjijNm1dD_57gvpIbE4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/1/saveResume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"1",
+								"saveResume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get candidate by job post - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yMUBnbWFpbC5jb20iLCJpYXQiOjE3MzkwODU1OTB9.zOcfG71jpwg-JKgf5FXT3VmtsqCU5Yux0fuONfDi1BE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/getByJobPost/javafullstackdeveloper",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"getByJobPost",
+								"javafullstackdeveloper"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get placed candidate - franchisor (status = 5)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yMUBnbWFpbC5jb20iLCJpYXQiOjE3MzkwODU1OTB9.zOcfG71jpwg-JKgf5FXT3VmtsqCU5Yux0fuONfDi1BE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/placed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"placed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get unplaced candidate - franchisor (status = 0, 6)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yMUBnbWFpbC5jb20iLCJpYXQiOjE3MzkwODU1OTB9.zOcfG71jpwg-JKgf5FXT3VmtsqCU5Yux0fuONfDi1BE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/unplaced",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"unplaced"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get in process candidates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yMUBnbWFpbC5jb20iLCJpYXQiOjE3MzkwODU1OTB9.zOcfG71jpwg-JKgf5FXT3VmtsqCU5Yux0fuONfDi1BE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/inProcess",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"inProcess"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Franchisor",
+			"item": [
+				{
+					"name": "get job posts - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yM0BnbWFpbC5jb20iLCJpYXQiOjE3MzkwOTM4Nzh9.pvfHO7XLxoI6bxYwIo_T9PorUFew7fG_VfBL_5CnIRk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/franchisor/jobPosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"franchisor",
+								"jobPosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - franchisor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"franchisor3@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "match candidate by job posting id - franchisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFuY2hpc29yM0BnbWFpbC5jb20iLCJpYXQiOjE3MzkwOTM4Nzh9.pvfHO7XLxoI6bxYwIo_T9PorUFew7fG_VfBL_5CnIRk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/franchisor/matchCandidate/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"franchisor",
+								"matchCandidate",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
